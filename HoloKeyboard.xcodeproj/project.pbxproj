@@ -7,25 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9D2F896C31ACC0ECA77EE2 /* libPods-HoloKeyboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD80E2FF0A1286DCDE71B84 /* libPods-HoloKeyboard.a */; };
 		A43AAA571E4B05ED0094D465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA561E4B05ED0094D465 /* main.m */; };
 		A43AAA5A1E4B05ED0094D465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA591E4B05ED0094D465 /* AppDelegate.m */; };
-		A43AAA5D1E4B05ED0094D465 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA5C1E4B05ED0094D465 /* ViewController.m */; };
+		A43AAA5D1E4B05ED0094D465 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA5C1E4B05ED0094D465 /* KeyboardViewController.m */; };
 		A43AAA601E4B05ED0094D465 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43AAA5E1E4B05ED0094D465 /* Main.storyboard */; };
 		A43AAA621E4B05ED0094D465 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43AAA611E4B05ED0094D465 /* Assets.xcassets */; };
 		A43AAA651E4B05ED0094D465 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A43AAA631E4B05ED0094D465 /* LaunchScreen.storyboard */; };
+		A43AAA6E1E4B06370094D465 /* HoloDeviceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA6D1E4B06370094D465 /* HoloDeviceClient.m */; };
+		A43AAA711E4B0FB40094D465 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA701E4B0FB40094D465 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CC4E46E643F74E9CC318E08 /* Pods-HoloKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-HoloKeyboard/Pods-HoloKeyboard.release.xcconfig"; sourceTree = "<group>"; };
+		8DE98FE9DD87D41E7D32108D /* Pods-HoloKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoloKeyboard/Pods-HoloKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
 		A43AAA521E4B05ED0094D465 /* HoloKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43AAA561E4B05ED0094D465 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A43AAA581E4B05ED0094D465 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A43AAA591E4B05ED0094D465 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A43AAA5B1E4B05ED0094D465 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A43AAA5C1E4B05ED0094D465 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A43AAA5B1E4B05ED0094D465 /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
+		A43AAA5C1E4B05ED0094D465 /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
 		A43AAA5F1E4B05ED0094D465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A43AAA611E4B05ED0094D465 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A43AAA641E4B05ED0094D465 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A43AAA661E4B05ED0094D465 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A43AAA6C1E4B06370094D465 /* HoloDeviceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoloDeviceClient.h; sourceTree = "<group>"; };
+		A43AAA6D1E4B06370094D465 /* HoloDeviceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoloDeviceClient.m; sourceTree = "<group>"; };
+		A43AAA6F1E4B0FB40094D465 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A43AAA701E4B0FB40094D465 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		ACD80E2FF0A1286DCDE71B84 /* libPods-HoloKeyboard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HoloKeyboard.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9D2F896C31ACC0ECA77EE2 /* libPods-HoloKeyboard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32E6CF6A1721F3B9222EB87D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DE98FE9DD87D41E7D32108D /* Pods-HoloKeyboard.debug.xcconfig */,
+				6CC4E46E643F74E9CC318E08 /* Pods-HoloKeyboard.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5BD5144C6C1DD5F2A2FA7AE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACD80E2FF0A1286DCDE71B84 /* libPods-HoloKeyboard.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A43AAA491E4B05ED0094D465 = {
 			isa = PBXGroup;
 			children = (
 				A43AAA541E4B05ED0094D465 /* HoloKeyboard */,
 				A43AAA531E4B05ED0094D465 /* Products */,
+				32E6CF6A1721F3B9222EB87D /* Pods */,
+				5BD5144C6C1DD5F2A2FA7AE5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +88,14 @@
 		A43AAA541E4B05ED0094D465 /* HoloKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				A43AAA6C1E4B06370094D465 /* HoloDeviceClient.h */,
+				A43AAA6D1E4B06370094D465 /* HoloDeviceClient.m */,
 				A43AAA581E4B05ED0094D465 /* AppDelegate.h */,
 				A43AAA591E4B05ED0094D465 /* AppDelegate.m */,
-				A43AAA5B1E4B05ED0094D465 /* ViewController.h */,
-				A43AAA5C1E4B05ED0094D465 /* ViewController.m */,
+				A43AAA5B1E4B05ED0094D465 /* KeyboardViewController.h */,
+				A43AAA5C1E4B05ED0094D465 /* KeyboardViewController.m */,
+				A43AAA6F1E4B0FB40094D465 /* LoginViewController.h */,
+				A43AAA701E4B0FB40094D465 /* LoginViewController.m */,
 				A43AAA5E1E4B05ED0094D465 /* Main.storyboard */,
 				A43AAA611E4B05ED0094D465 /* Assets.xcassets */,
 				A43AAA631E4B05ED0094D465 /* LaunchScreen.storyboard */,
@@ -86,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A43AAA691E4B05ED0094D465 /* Build configuration list for PBXNativeTarget "HoloKeyboard" */;
 			buildPhases = (
+				70FE3CC54D6A03AC64A81839 /* [CP] Check Pods Manifest.lock */,
 				A43AAA4E1E4B05ED0094D465 /* Sources */,
 				A43AAA4F1E4B05ED0094D465 /* Frameworks */,
 				A43AAA501E4B05ED0094D465 /* Resources */,
+				EB2C26FDA35201E64677FB64 /* [CP] Embed Pods Frameworks */,
+				EAF6788FFD78DF2B98DE15FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -110,6 +147,7 @@
 				TargetAttributes = {
 					A43AAA511E4B05ED0094D465 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3LARBZN7YV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -145,14 +183,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		70FE3CC54D6A03AC64A81839 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EAF6788FFD78DF2B98DE15FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HoloKeyboard/Pods-HoloKeyboard-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB2C26FDA35201E64677FB64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HoloKeyboard/Pods-HoloKeyboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A43AAA4E1E4B05ED0094D465 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A43AAA5D1E4B05ED0094D465 /* ViewController.m in Sources */,
+				A43AAA5D1E4B05ED0094D465 /* KeyboardViewController.m in Sources */,
 				A43AAA5A1E4B05ED0094D465 /* AppDelegate.m in Sources */,
+				A43AAA6E1E4B06370094D465 /* HoloDeviceClient.m in Sources */,
 				A43AAA571E4B05ED0094D465 /* main.m in Sources */,
+				A43AAA711E4B0FB40094D465 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,9 +356,12 @@
 		};
 		A43AAA6A1E4B05ED0094D465 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DE98FE9DD87D41E7D32108D /* Pods-HoloKeyboard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3LARBZN7YV;
 				INFOPLIST_FILE = HoloKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.orelabo.HoloKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -279,9 +370,12 @@
 		};
 		A43AAA6B1E4B05ED0094D465 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CC4E46E643F74E9CC318E08 /* Pods-HoloKeyboard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3LARBZN7YV;
 				INFOPLIST_FILE = HoloKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.orelabo.HoloKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -307,6 +401,7 @@
 				A43AAA6B1E4B05ED0094D465 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,11 +2,11 @@
 //  AppDelegate.m
 //  HoloKeyboard
 //
-//  Created by 上田 澄博 on 2017/02/08.
-//  Copyright © 2017年 Sumihiro Ueda. All rights reserved.
+//  Created by Sumihiro Ueda on 2017/02/08.
 //
 
 #import "AppDelegate.h"
+#import <SVProgressHUD.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    
     return YES;
 }
 
