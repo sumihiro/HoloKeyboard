@@ -13,6 +13,12 @@ Usage
 1. Set IP address of your HoloLens.
 1. Login with username and password.
 
+Available on AppStore
+=========
+
+You can also get the app from the AppStore.
+https://itunes.apple.com/us/app/holokeyboard-for-hololens/id1203716252?ls=1&mt=8
+
 Credit
 =========
 
