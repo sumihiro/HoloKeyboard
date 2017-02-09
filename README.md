@@ -3,6 +3,8 @@ HoloKeyboard for iOS
 
 HoloKeyboard is a virtual keyboard app for Microsoft HoloLens under GPLv3 license.  
 
+![screenshot](https://github.com/sumihiro/HoloKeyboard/blob/master/img/screenshot.png)!
+
 Usage
 =========
 
