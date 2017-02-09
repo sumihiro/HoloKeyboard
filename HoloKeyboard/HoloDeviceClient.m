@@ -7,6 +7,7 @@
 
 #import "HoloDeviceClient.h"
 
+
 @interface HoloDeviceClient () <NSURLSessionDelegate>
 
 @property (nonatomic,copy) NSString *host;
@@ -76,13 +77,22 @@
 }
 
 - (void)sendText:(NSString*)text success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
+    NSString *encoded = [text stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    [self sendEncodedText:encoded success:success failure:failure];
+}
+
+- (void)sendSpecialChar:(HoloDeviceClientSpecialChar)specialChar success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
+    NSString *encoded = [NSString stringWithFormat:@"%%%02X",specialChar];
+    [self sendEncodedText:encoded success:success failure:failure];
+}
+
+- (void)sendEncodedText:(NSString*)encoded success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
     __weak typeof(self) this = self;
     
-    NSString *encoded = [text stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSString *dataText = [NSString stringWithFormat:@"api/holographic/input/keyboard/text?text=%@",encoded];
-
+    
     NSURL *url = [NSURL URLWithString:dataText relativeToURL:self.baseUrl];
-
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [self appendCSRFFieldToRequest:request];
     [request setHTTPMethod:@"POST"];

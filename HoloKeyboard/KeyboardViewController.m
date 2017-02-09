@@ -18,7 +18,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolBar.barStyle = UIBarStyleDefault;
+    [toolBar sizeToFit];
+    
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    UIBarButtonItem *spacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
+    spacer2.width = 10.;
+
+    UIBarButtonItem *spacer3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
+    spacer3.width = 10.;
+
+    UIBarButtonItem *tab = [[UIBarButtonItem alloc] initWithTitle:@"TAB" style:UIBarButtonItemStylePlain target:self action:@selector(pushTab:)];
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithTitle:@"SPACE" style:UIBarButtonItemStylePlain target:self action:@selector(pushSpace:)];
+    UIBarButtonItem *bs = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backspace"] style:UIBarButtonItemStylePlain target:self action:@selector(pushBS:)];
+    UIBarButtonItem *enter = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"enter"] style:UIBarButtonItemStylePlain target:self action:@selector(pushEnter:)];
+
+    NSArray *items = [NSArray arrayWithObjects:spacer, tab, space, spacer2, bs, spacer3, enter, nil];
+    [toolBar setItems:items animated:NO];
+    
+    // ToolbarをUITextFieldのinputAccessoryViewに設定
+    self.textField.inputAccessoryView = toolBar;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -45,6 +66,32 @@
     }];
     
     return NO;
+}
+
+- (void)pushEnter:(id)sender {
+    [self sendSpecialChar:HoloDeviceClientSpecialCharCarriageReturn];
+}
+
+- (void)pushBS:(id)sender {
+    [self sendSpecialChar:HoloDeviceClientSpecialCharBackSpace];
+}
+
+- (void)pushTab:(id)sender {
+    [self sendSpecialChar:HoloDeviceClientSpecialCharTab];
+}
+
+- (void)pushSpace:(id)sender {
+    [self sendSpecialChar:HoloDeviceClientSpecialCharBackSpace];
+}
+
+- (void)sendSpecialChar:(HoloDeviceClientSpecialChar)specialChar {
+    [SVProgressHUD showWithStatus:@"Sending..."];
+    
+    [self.client sendSpecialChar:specialChar success:^{
+        [SVProgressHUD dismiss];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    }];
 }
 
 @end
