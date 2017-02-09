@@ -86,12 +86,42 @@
     [self sendEncodedText:encoded success:success failure:failure];
 }
 
-- (void)sendEncodedText:(NSString*)encoded success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
+- (void)sendUpDownKeyCode:(HoloDeviceClientKeyCode)keyCode success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
     __weak typeof(self) this = self;
-    
+    [this sendDownKeyCode:keyCode success:^(){
+        [this sendUpKeyCode:keyCode success:success failure:failure];
+    } failure:failure];
+}
+
+- (void)sendUpKeyCode:(HoloDeviceClientKeyCode)keyCode success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
+    [self sendVirtualKey:keyCode up:YES success:success failure:failure];
+}
+
+- (void)sendDownKeyCode:(HoloDeviceClientKeyCode)keyCode success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
+    [self sendVirtualKey:keyCode up:NO success:success failure:failure];
+}
+
+#pragma mark --
+
+
+- (void)sendEncodedText:(NSString*)encoded success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
     NSString *dataText = [NSString stringWithFormat:@"api/holographic/input/keyboard/text?text=%@",encoded];
     
     NSURL *url = [NSURL URLWithString:dataText relativeToURL:self.baseUrl];
+    [self postTo:url success:success failure:failure];
+}
+
+
+- (void)sendVirtualKey:(HoloDeviceClientKeyCode)keyCode up:(BOOL)up success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
+    
+    NSString *dataText = [NSString stringWithFormat:@"api/holographic/input/keyboard/vkey/%@?code=%d", up?@"up":@"down", keyCode];
+    
+    NSURL *url = [NSURL URLWithString:dataText relativeToURL:self.baseUrl];
+    [self postTo:url success:success failure:failure];
+}
+
+- (void)postTo:(NSURL*)url success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure {
+    __weak typeof(self) this = self;
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [self appendCSRFFieldToRequest:request];
@@ -101,6 +131,7 @@
         [this  handleResponseError:(NSHTTPURLResponse*)response error:error success:success failure:failure];
     }] resume];
 }
+
 
 - (void)appendCSRFFieldToRequest:(NSMutableURLRequest*)request {
     NSAssert(self.token != nil, @"CSRF token not found.");

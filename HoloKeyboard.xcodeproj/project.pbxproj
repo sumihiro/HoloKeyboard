@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A9D2F896C31ACC0ECA77EE2 /* libPods-HoloKeyboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD80E2FF0A1286DCDE71B84 /* libPods-HoloKeyboard.a */; };
+		A404F21D1E4CC39500502FC4 /* KeyboaedAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A404F21C1E4CC39500502FC4 /* KeyboaedAccessoryView.xib */; };
+		A404F2201E4CC43E00502FC4 /* RoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A404F21F1E4CC43E00502FC4 /* RoundRectButton.m */; };
+		A404F2231E4CC99100502FC4 /* KeyboaedAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A404F2221E4CC99100502FC4 /* KeyboaedAccessoryView.m */; };
 		A43AAA571E4B05ED0094D465 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA561E4B05ED0094D465 /* main.m */; };
 		A43AAA5A1E4B05ED0094D465 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA591E4B05ED0094D465 /* AppDelegate.m */; };
 		A43AAA5D1E4B05ED0094D465 /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A43AAA5C1E4B05ED0094D465 /* KeyboardViewController.m */; };
@@ -21,6 +24,11 @@
 /* Begin PBXFileReference section */
 		6CC4E46E643F74E9CC318E08 /* Pods-HoloKeyboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloKeyboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-HoloKeyboard/Pods-HoloKeyboard.release.xcconfig"; sourceTree = "<group>"; };
 		8DE98FE9DD87D41E7D32108D /* Pods-HoloKeyboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HoloKeyboard.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HoloKeyboard/Pods-HoloKeyboard.debug.xcconfig"; sourceTree = "<group>"; };
+		A404F21C1E4CC39500502FC4 /* KeyboaedAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboaedAccessoryView.xib; sourceTree = "<group>"; };
+		A404F21E1E4CC43E00502FC4 /* RoundRectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundRectButton.h; sourceTree = "<group>"; };
+		A404F21F1E4CC43E00502FC4 /* RoundRectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundRectButton.m; sourceTree = "<group>"; };
+		A404F2211E4CC99100502FC4 /* KeyboaedAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboaedAccessoryView.h; sourceTree = "<group>"; };
+		A404F2221E4CC99100502FC4 /* KeyboaedAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboaedAccessoryView.m; sourceTree = "<group>"; };
 		A43AAA521E4B05ED0094D465 /* HoloKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43AAA561E4B05ED0094D465 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A43AAA581E4B05ED0094D465 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +104,11 @@
 				A43AAA5C1E4B05ED0094D465 /* KeyboardViewController.m */,
 				A43AAA6F1E4B0FB40094D465 /* LoginViewController.h */,
 				A43AAA701E4B0FB40094D465 /* LoginViewController.m */,
+				A404F21C1E4CC39500502FC4 /* KeyboaedAccessoryView.xib */,
+				A404F2211E4CC99100502FC4 /* KeyboaedAccessoryView.h */,
+				A404F2221E4CC99100502FC4 /* KeyboaedAccessoryView.m */,
+				A404F21E1E4CC43E00502FC4 /* RoundRectButton.h */,
+				A404F21F1E4CC43E00502FC4 /* RoundRectButton.m */,
 				A43AAA5E1E4B05ED0094D465 /* Main.storyboard */,
 				A43AAA611E4B05ED0094D465 /* Assets.xcassets */,
 				A43AAA631E4B05ED0094D465 /* LaunchScreen.storyboard */,
@@ -176,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A43AAA651E4B05ED0094D465 /* LaunchScreen.storyboard in Resources */,
+				A404F21D1E4CC39500502FC4 /* KeyboaedAccessoryView.xib in Resources */,
 				A43AAA621E4B05ED0094D465 /* Assets.xcassets in Resources */,
 				A43AAA601E4B05ED0094D465 /* Main.storyboard in Resources */,
 			);
@@ -238,7 +252,9 @@
 			files = (
 				A43AAA5D1E4B05ED0094D465 /* KeyboardViewController.m in Sources */,
 				A43AAA5A1E4B05ED0094D465 /* AppDelegate.m in Sources */,
+				A404F2201E4CC43E00502FC4 /* RoundRectButton.m in Sources */,
 				A43AAA6E1E4B06370094D465 /* HoloDeviceClient.m in Sources */,
+				A404F2231E4CC99100502FC4 /* KeyboaedAccessoryView.m in Sources */,
 				A43AAA571E4B05ED0094D465 /* main.m in Sources */,
 				A43AAA711E4B0FB40094D465 /* LoginViewController.m in Sources */,
 			);

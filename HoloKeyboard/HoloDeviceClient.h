@@ -19,6 +19,7 @@ typedef enum : int {
     HoloDeviceClientSpecialCharUnitSpace = 0x20,
 } HoloDeviceClientSpecialChar;
 
+typedef int HoloDeviceClientKeyCode;
 
 @interface HoloDeviceClient : NSObject
 
@@ -26,5 +27,8 @@ typedef enum : int {
 - (void)login:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure;
 - (void)sendText:(NSString*)text success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure;
 - (void)sendSpecialChar:(HoloDeviceClientSpecialChar)specialChar success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure;
+- (void)sendUpDownKeyCode:(HoloDeviceClientKeyCode)keyCode success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure;
+- (void)sendUpKeyCode:(HoloDeviceClientKeyCode)keyCode success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure;
+- (void)sendDownKeyCode:(HoloDeviceClientKeyCode)keyCode success:(HoloDeviceClientLoginSuccess)success failure:(HoloDeviceClientLoginFailure)failure;
 
 @end

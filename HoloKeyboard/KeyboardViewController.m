@@ -6,6 +6,7 @@
 //
 
 #import "KeyboardViewController.h"
+#import "KeyboaedAccessoryView.h"
 #import <SVProgressHUD.h>
 
 @interface KeyboardViewController () <UITextFieldDelegate>
@@ -19,27 +20,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    toolBar.barStyle = UIBarStyleDefault;
-    [toolBar sizeToFit];
-    
-    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *spacer2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
-    spacer2.width = 10.;
-
-    UIBarButtonItem *spacer3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:self action:nil];
-    spacer3.width = 10.;
-
-    UIBarButtonItem *tab = [[UIBarButtonItem alloc] initWithTitle:@"TAB" style:UIBarButtonItemStylePlain target:self action:@selector(pushTab:)];
-    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithTitle:@"SPACE" style:UIBarButtonItemStylePlain target:self action:@selector(pushSpace:)];
-    UIBarButtonItem *bs = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backspace"] style:UIBarButtonItemStylePlain target:self action:@selector(pushBS:)];
-    UIBarButtonItem *enter = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"enter"] style:UIBarButtonItemStylePlain target:self action:@selector(pushEnter:)];
-
-    NSArray *items = [NSArray arrayWithObjects:spacer, tab, space, spacer2, bs, spacer3, enter, nil];
-    [toolBar setItems:items animated:NO];
-    
-    // ToolbarをUITextFieldのinputAccessoryViewに設定
-    self.textField.inputAccessoryView = toolBar;
+    KeyboaedAccessoryView *view = [[[NSBundle mainBundle] loadNibNamed:@"KeyboaedAccessoryView" owner:nil options:0] firstObject];
+    __weak typeof(self) this = self;
+    view.up = ^(){
+        [this sendKeyCode:38];
+    };
+    view.down = ^(){
+        [this sendKeyCode:40];
+    };
+    view.left = ^(){
+        [this sendKeyCode:37];
+    };
+    view.right = ^(){
+        [this sendKeyCode:39];
+    };
+    view.tab = ^(){
+        [this sendKeyCode:9];
+    };
+    view.reverseTab = ^(){
+        // 16 -> 9
+        [SVProgressHUD showWithStatus:@"Sending..."];
+        
+        [this.client sendDownKeyCode:16 success:^{
+            [this.client sendUpDownKeyCode:9 success:^{
+                [this.client sendUpKeyCode:16 success:^{
+                    [SVProgressHUD dismiss];
+                } failure:^(NSError *error) {
+                    [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+                }];
+            } failure:^(NSError *error) {
+                [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+            }];
+        } failure:^(NSError *error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+        }];
+    };
+    view.space = ^(){
+        [self sendSpecialChar:HoloDeviceClientSpecialCharUnitSpace];
+    };
+    view.enter = ^(){
+        [this sendKeyCode:13];
+    };
+    view.backSpace = ^(){
+        [this sendKeyCode:8];
+    };
+    self.textField.inputAccessoryView = view;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -81,13 +106,23 @@
 }
 
 - (void)pushSpace:(id)sender {
-    [self sendSpecialChar:HoloDeviceClientSpecialCharBackSpace];
+    [self sendSpecialChar:HoloDeviceClientSpecialCharUnitSpace];
 }
 
 - (void)sendSpecialChar:(HoloDeviceClientSpecialChar)specialChar {
     [SVProgressHUD showWithStatus:@"Sending..."];
     
     [self.client sendSpecialChar:specialChar success:^{
+        [SVProgressHUD dismiss];
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    }];
+}
+
+- (void)sendKeyCode:(HoloDeviceClientKeyCode)keyCode {
+    [SVProgressHUD showWithStatus:@"Sending..."];
+    
+    [self.client sendUpDownKeyCode:keyCode success:^{
         [SVProgressHUD dismiss];
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
