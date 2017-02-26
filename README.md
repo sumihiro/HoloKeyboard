@@ -5,6 +5,12 @@ HoloKeyboard is a virtual keyboard app for Microsoft HoloLens under GPLv3 licens
 
 ![screenshot](https://github.com/sumihiro/HoloKeyboard/blob/master/img/screenshot.png)
 
+- Features
+=========
+
+* Either in Japanese or Chinese, you can easily input any language that iPhone supports.
+* Of course you can also input emoji😇
+
 Usage
 =========
 
