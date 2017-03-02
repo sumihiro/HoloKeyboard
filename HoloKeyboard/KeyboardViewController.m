@@ -12,6 +12,7 @@
 @interface KeyboardViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UIButton *secureButton;
 
 @end
 
@@ -91,6 +92,22 @@
     }];
     
     return NO;
+}
+
+- (IBAction)pushSecure:(id)sender {
+    BOOL secure = self.textField.secureTextEntry;
+    secure = !secure;
+    self.textField.secureTextEntry = secure;
+    self.secureButton.selected = secure;
+    if (secure) {
+        self.textField.layer.borderColor = [self.view tintColor].CGColor;
+        self.textField.layer.borderWidth = 2.;
+        self.textField.layer.cornerRadius = 6.;
+    } else {
+        self.textField.layer.borderColor = nil;
+        self.textField.layer.borderWidth = 0.;
+        self.textField.layer.cornerRadius = 0.;
+    }
 }
 
 - (void)pushEnter:(id)sender {
